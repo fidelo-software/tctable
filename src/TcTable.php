@@ -930,7 +930,7 @@ class TcTable {
      * @param int $index row index
      * @return TcTable
      */
-    private function addRow($row, $index = null) {
+    public function addRow($row, $index = null) {
         $this->copyDefaultColumnDefinitions($row, $index);
         if ($this->trigger(self::EV_ROW_ADD, [$row, $index]) === false) {
             return $this;
